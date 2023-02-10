@@ -66,11 +66,8 @@ namespace CalculateTime
 
         private void UseFullTime_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
-            {
-                e.SuppressKeyPress = Calc();
-                return;
-            }
+            e.SuppressKeyPress = Calc();
+            return;
         }
 
         private bool Calc()
