@@ -1,8 +1,4 @@
-﻿using System;
-using System.Linq;
-using System.Reflection;
-using System.Windows;
-using System.Windows.Forms;
+﻿using System.Reflection;
 
 
 namespace CalculateTime
@@ -38,7 +34,7 @@ namespace CalculateTime
             this.lOutput = new System.Windows.Forms.Label();
             this.lInput = new System.Windows.Forms.Label();
             this.inputSeconds = new System.Windows.Forms.TextBox();
-            this.outputDate = new System.Windows.Forms.TextBox();
+            this.outputTime = new System.Windows.Forms.TextBox();
             this.copyright = new System.Windows.Forms.Label();
             this.useFullTime = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
@@ -69,13 +65,13 @@ namespace CalculateTime
             this.inputSeconds.TabIndex = 0;
             this.inputSeconds.KeyDown += new System.Windows.Forms.KeyEventHandler(this.InputSeconds_KeyDown);
             // 
-            // outputDate
+            // outputTime
             // 
-            this.outputDate.Location = new System.Drawing.Point(147, 58);
-            this.outputDate.Name = "outputDate";
-            this.outputDate.ReadOnly = true;
-            this.outputDate.Size = new System.Drawing.Size(246, 20);
-            this.outputDate.TabIndex = 4;
+            this.outputTime.Location = new System.Drawing.Point(147, 58);
+            this.outputTime.Name = "outputTime";
+            this.outputTime.ReadOnly = true;
+            this.outputTime.Size = new System.Drawing.Size(246, 20);
+            this.outputTime.TabIndex = 4;
             // 
             // copyright
             // 
@@ -96,7 +92,6 @@ namespace CalculateTime
             this.useFullTime.Text = "Kết quả dạng đầy đủ";
             this.useFullTime.UseVisualStyleBackColor = true;
             this.useFullTime.CheckedChanged += new System.EventHandler(this.UseFullTime_CheckedChanged);
-            this.useFullTime.KeyDown += new System.Windows.Forms.KeyEventHandler(this.UseFullTime_KeyDown);
             // 
             // CalculateTime
             // 
@@ -105,27 +100,24 @@ namespace CalculateTime
             this.ClientSize = new System.Drawing.Size(456, 165);
             this.Controls.Add(this.useFullTime);
             this.Controls.Add(this.copyright);
-            this.Controls.Add(this.outputDate);
+            this.Controls.Add(this.outputTime);
             this.Controls.Add(this.inputSeconds);
             this.Controls.Add(this.lInput);
             this.Controls.Add(this.lOutput);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "CalculateTime";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Máy chuyển đổi thời gian";
             this.ResumeLayout(false);
             this.PerformLayout();
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            var assembly = Assembly.GetExecutingAssembly();
-            var resourceName = "CalculateTime.favicon.ico";
-            this.Icon = new System.Drawing.Icon(assembly.GetManifestResourceStream(resourceName));
+            this.Icon = new System.Drawing.Icon(Assembly.GetExecutingAssembly().GetManifestResourceStream("CalculateTime.favicon.ico"));
         }
-
         #endregion
         private System.Windows.Forms.Label lOutput;
         private System.Windows.Forms.Label lInput;
         private System.Windows.Forms.TextBox inputSeconds;
-        private System.Windows.Forms.TextBox outputDate;
+        private System.Windows.Forms.TextBox outputTime;
         private System.Windows.Forms.Label copyright;
         private System.Windows.Forms.CheckBox useFullTime;
     }
