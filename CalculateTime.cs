@@ -75,7 +75,7 @@ namespace CalculateTime
             ClearResult();
             if (!uint.TryParse(inputSeconds.Text, out _) || uint.Parse(inputSeconds.Text) == 0)
             {
-                _ = MessageBox.Show(inputSeconds.Text + " không phải là số nguyên dương lớn hơn 0.", "Lỗi");
+                _ = MessageBox.Show(inputSeconds.Text + " không phải là số nguyên dương lớn hơn 0 hoặc quá dài.", "Lỗi");
                 SetOldInput(GetOldInput());
                 inputSeconds.Text = _oldInput == 0 ? "" : GetOldInput().ToString();
                 return false;
@@ -89,3 +89,4 @@ namespace CalculateTime
         }
     }
 }
+
